@@ -1,4 +1,3 @@
-
 /*
 Given an array of integers nums and an integer target,
 return indices of the two numbers such that they add up to target.
@@ -23,15 +22,27 @@ Input: nums = [3,3], target = 6
 Output: [0,1]
  */
 
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+
 public class TwoSum {
-
-    public int[] twoSum(int[] nums, int target) {
-
-
-        return nums;
+    public static int[] twoSum(int[] nums, int target) {
+        Map<Integer, Integer> map = new HashMap(nums.length);
+        for (int i = 0; i < nums.length; i++) {
+            int diff = target - nums[i];
+            if (map.get(nums[i]) == null) {
+                map.put(diff, i);
+            }
+            else return new int[] {map.get(nums[i]), i};
+        }
+        return new int[] {};
     }
 
-    public static void main(String[] args) {
 
+    public static void main(String[] args) {
+        int[] nums = {3,2,4};
+        int target = 6;
+        twoSum(nums, target);
     }
 }
