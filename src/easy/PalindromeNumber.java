@@ -5,7 +5,6 @@ package easy;
 //  For example, 121 is a palindrome while 123 is not.
 
 public class PalindromeNumber {
-
     public static boolean isPalindrome(int x) {
         int r, sum = 0, temp;
 
